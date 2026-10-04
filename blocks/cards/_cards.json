@@ -46,7 +46,7 @@
           "component": "richtext",
           "name": "text",
           "value": "",
-          "label": "Text",
+          "label": "Content Card",
           "valueType": "string"
         }
       ]
