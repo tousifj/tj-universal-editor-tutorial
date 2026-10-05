@@ -1,0 +1,9 @@
+{
+  "mappings": [
+    "/content/aware/au/en/tsecond-act/:/"
+  ],
+  "includes": [
+    "/content/",
+    "/content/dam/"
+  ]
+}
