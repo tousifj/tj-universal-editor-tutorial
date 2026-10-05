@@ -1,9 +1,12 @@
 {
-  "mappings": [
-    "/content/aware/au/en/tsecond-act/:/"
-  ],
-  "includes": [
-    "/content/",
-    "/content/dam/"
-  ]
+  "paths": {
+    "mappings": [
+      "/content/aware/au/en/tsecond-act/:/",
+      "/content/dam/aware/au/en/second-act/:/assets/"
+    ],
+    "includes": [
+      "/content/",
+      "/content/dam/"
+    ]
+  }
 }
