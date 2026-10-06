@@ -1,14 +1,10 @@
 export default function decorate(block) {
-  const rows = [...block.children];
-
   const [
     episodeTagRow,
     campaignLogoRow,
-    metadataRow,
-    descriptionRow,
-    ctaRow,
+    contentRow,
     backgroundImageRow,
-  ] = rows;
+  ] = [...block.children];
 
   // Episode tag
   if (episodeTagRow) {
@@ -20,30 +16,36 @@ export default function decorate(block) {
     campaignLogoRow.classList.add('campaign-hero-logo');
 
     const img = campaignLogoRow.querySelector('img');
+
     if (img) {
       img.loading = 'eager';
       img.fetchPriority = 'high';
     }
   }
 
-  // Metadata
-  if (metadataRow) {
-    metadataRow.classList.add('campaign-hero-metadata');
-  }
+  // Campaign content:
+  // metadata + description + CTA
+  if (contentRow) {
+    contentRow.classList.add('campaign-hero-content-body');
 
-  // Description
-  if (descriptionRow) {
-    descriptionRow.classList.add('campaign-hero-description');
-  }
+    const paragraphs = [...contentRow.querySelectorAll('p')];
 
-  // CTA
-  if (ctaRow) {
-    ctaRow.classList.add('campaign-hero-cta');
-
-    const link = ctaRow.querySelector('a');
-    if (link) {
-      link.classList.add('button', 'primary');
+    // First paragraph = metadata
+    if (paragraphs[0]) {
+      paragraphs[0].classList.add('campaign-hero-metadata');
     }
+
+    // Paragraph containing link = CTA
+    paragraphs.forEach((paragraph) => {
+      const link = paragraph.querySelector('a');
+
+      if (link) {
+        paragraph.classList.add('campaign-hero-cta');
+        link.classList.add('button', 'primary');
+      } else if (paragraph !== paragraphs[0]) {
+        paragraph.classList.add('campaign-hero-description');
+      }
+    });
   }
 
   // Background image
@@ -55,26 +57,35 @@ export default function decorate(block) {
     if (picture) {
       picture.setAttribute('aria-hidden', 'true');
     }
+
+    const img = backgroundImageRow.querySelector('img');
+
+    if (img) {
+      img.alt = '';
+      img.loading = 'eager';
+      img.fetchPriority = 'high';
+    }
   }
 
-  // Content wrapper
-  const content = document.createElement('div');
-  content.className = 'campaign-hero-content';
+  // Create wrapper for foreground hero content
+  const contentWrapper = document.createElement('div');
+  contentWrapper.className = 'campaign-hero-content';
 
   [
     episodeTagRow,
     campaignLogoRow,
-    metadataRow,
-    descriptionRow,
-    ctaRow,
+    contentRow,
   ].forEach((row) => {
-    if (row) content.append(row);
+    if (row) {
+      contentWrapper.append(row);
+    }
   });
 
-  block.append(content);
-
-  // Keep background outside content wrapper
+  // Background first
   if (backgroundImageRow) {
     block.prepend(backgroundImageRow);
   }
+
+  // Foreground content
+  block.append(contentWrapper);
 }
