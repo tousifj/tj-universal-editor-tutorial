@@ -1,3 +1,5 @@
+/* Campaign Hero */
+
 .campaign-hero {
   position: relative;
   display: flex;
@@ -8,7 +10,10 @@
   background-color: #1a1a1a;
 }
 
-/* Background */
+
+/* ==============================
+   Background
+   ============================== */
 
 .campaign-hero .campaign-hero-background {
   position: absolute;
@@ -33,23 +38,28 @@
   object-fit: cover;
 }
 
-/* Dark overlay for readability */
+
+/* ==============================
+   Background overlay
+   ============================== */
 
 .campaign-hero::after {
   content: '';
   position: absolute;
   inset: 0;
   z-index: 1;
-  background:
-    linear-gradient(
-      90deg,
-      rgb(0 0 0 / 75%) 0%,
-      rgb(0 0 0 / 50%) 45%,
-      rgb(0 0 0 / 10%) 100%
-    );
+  background: linear-gradient(
+    90deg,
+    rgb(0 0 0 / 75%) 0%,
+    rgb(0 0 0 / 50%) 45%,
+    rgb(0 0 0 / 10%) 100%
+  );
 }
 
-/* Content */
+
+/* ==============================
+   Content
+   ============================== */
 
 .campaign-hero .campaign-hero-content {
   position: relative;
@@ -63,13 +73,16 @@
   max-width: 620px;
 }
 
-/* Episode tag */
+
+/* ==============================
+   Episode tag
+   ============================== */
 
 .campaign-hero .campaign-hero-episode-tag {
   display: inline-flex;
   align-items: center;
   width: fit-content;
-  margin-bottom: 24px;
+  margin-bottom: 8px;
   padding: 8px 14px;
   border-radius: 20px;
   font-size: 14px;
@@ -78,41 +91,92 @@
   background: rgb(0 0 0 / 55%);
 }
 
-/* Campaign logo */
+
+/* ==============================
+   Campaign wordmark
+   ============================== */
 
 .campaign-hero .campaign-hero-logo {
-  margin-bottom: 24px;
+  margin: 0;
 }
 
-.campaign-hero .campaign-hero-logo img {
-  display: block;
-  width: auto;
-  max-width: min(100%, 420px);
-  max-height: 180px;
+.campaign-hero .lockup-logo {
+  position: relative;
+  width: 430px;
+  height: 206px;
+  margin-top: 18px;
 }
 
-/* Metadata */
+.campaign-hero .lockup-logo span {
+  position: absolute;
+  white-space: nowrap;
+}
+
+.campaign-hero .logo-second {
+  left: 0;
+  top: 20px;
+  font-family: Pacifico, cursive;
+  font-size: 88px;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 5px 6px 0 #ed008c;
+}
+
+.campaign-hero .logo-the {
+  left: 58px;
+  top: 4px;
+  z-index: 2;
+  font-family: Poppins, sans-serif;
+  font-weight: 800;
+  font-size: 27px;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 3px 3px 0 #ed008c;
+}
+
+.campaign-hero .logo-act {
+  left: 206px;
+  top: 106px;
+  font-family: Pacifico, cursive;
+  font-size: 88px;
+  line-height: 1;
+  color: #ed008c;
+  text-shadow: 4px 5px 0 #fff;
+}
+
+
+/* ==============================
+   Metadata
+   ============================== */
 
 .campaign-hero .campaign-hero-metadata {
-  margin-bottom: 16px;
+  margin: 0 0 16px;
   font-size: 16px;
   font-weight: 600;
   line-height: 1.5;
 }
 
-/* Description */
+
+/* ==============================
+   Description
+   ============================== */
 
 .campaign-hero .campaign-hero-description {
-  margin-bottom: 32px;
+  margin: 0 0 16px;
   font-size: 18px;
   line-height: 1.6;
 }
 
-.campaign-hero .campaign-hero-description p {
-  margin: 0;
-}
 
-/* CTA */
+/* ==============================
+   CTA
+   ============================== */
+
+.campaign-hero .campaign-hero-cta {
+  margin: 32px 0 0;
+}
 
 .campaign-hero .campaign-hero-cta a {
   display: inline-flex;
@@ -132,7 +196,10 @@
   transform: translateY(-2px);
 }
 
-/* Tablet */
+
+/* ==============================
+   Tablet
+   ============================== */
 
 @media (width < 900px) {
   .campaign-hero {
@@ -140,21 +207,44 @@
   }
 
   .campaign-hero::after {
-    background:
-      linear-gradient(
-        90deg,
-        rgb(0 0 0 / 75%) 0%,
-        rgb(0 0 0 / 45%) 100%
-      );
+    background: linear-gradient(
+      90deg,
+      rgb(0 0 0 / 75%) 0%,
+      rgb(0 0 0 / 45%) 100%
+    );
   }
 
   .campaign-hero .campaign-hero-content {
     width: min(100% - 40px, 1200px);
     padding: 64px 0;
   }
+
+  .campaign-hero .lockup-logo {
+    width: 100%;
+    height: 156px;
+  }
+
+  .campaign-hero .logo-second {
+    top: 16px;
+    font-size: 66px;
+  }
+
+  .campaign-hero .logo-the {
+    left: 44px;
+    font-size: 21px;
+  }
+
+  .campaign-hero .logo-act {
+    left: 148px;
+    top: 76px;
+    font-size: 66px;
+  }
 }
 
-/* Mobile */
+
+/* ==============================
+   Mobile
+   ============================== */
 
 @media (width < 600px) {
   .campaign-hero {
@@ -163,13 +253,12 @@
   }
 
   .campaign-hero::after {
-    background:
-      linear-gradient(
-        0deg,
-        rgb(0 0 0 / 90%) 0%,
-        rgb(0 0 0 / 55%) 55%,
-        rgb(0 0 0 / 15%) 100%
-      );
+    background: linear-gradient(
+      0deg,
+      rgb(0 0 0 / 90%) 0%,
+      rgb(0 0 0 / 55%) 55%,
+      rgb(0 0 0 / 15%) 100%
+    );
   }
 
   .campaign-hero .campaign-hero-content {
@@ -177,16 +266,11 @@
     padding: 48px 0;
   }
 
-  .campaign-hero .campaign-hero-logo img {
-    max-width: 280px;
-  }
-
   .campaign-hero .campaign-hero-metadata {
     font-size: 14px;
   }
 
   .campaign-hero .campaign-hero-description {
-    margin-bottom: 24px;
     font-size: 16px;
   }
 }

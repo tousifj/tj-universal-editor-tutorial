@@ -151,9 +151,9 @@
         "valueType": "string"
       },
       {
-        "component": "reference",
-        "name": "campaignLogo",
-        "label": "Campaign Logo",
+        "component": "text",
+        "name": "campaignTitle",
+        "label": "Campaign Title",
         "valueType": "string"
       },
       {
