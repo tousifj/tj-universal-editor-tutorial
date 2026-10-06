@@ -142,6 +142,50 @@
     ]
   },
   {
+    "id": "campaign-hero",
+    "fields": [
+      {
+        "component": "text",
+        "name": "episodeTag",
+        "label": "Episode Tag",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "name": "campaignLogo",
+        "label": "Campaign Logo",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "metadata",
+        "label": "Metadata",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "label": "Description",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "cta",
+        "label": "CTA",
+        "valueType": "string",
+        "valueTypeField": "ctaType",
+        "valueTypeFieldLabel": "CTA Type",
+        "multi": false
+      },
+      {
+        "component": "reference",
+        "name": "backgroundImage",
+        "label": "Hero Background Image",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "card",
     "fields": [
       {

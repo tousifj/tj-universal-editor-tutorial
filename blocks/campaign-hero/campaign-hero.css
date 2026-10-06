@@ -1,0 +1,192 @@
+.campaign-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 680px;
+  overflow: hidden;
+  color: #fff;
+  background-color: #1a1a1a;
+}
+
+/* Background */
+
+.campaign-hero .campaign-hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.campaign-hero .campaign-hero-background > div {
+  height: 100%;
+}
+
+.campaign-hero .campaign-hero-background picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.campaign-hero .campaign-hero-background img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Dark overlay for readability */
+
+.campaign-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      90deg,
+      rgb(0 0 0 / 75%) 0%,
+      rgb(0 0 0 / 50%) 45%,
+      rgb(0 0 0 / 10%) 100%
+    );
+}
+
+/* Content */
+
+.campaign-hero .campaign-hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(100% - 48px, 1200px);
+  margin: 0 auto;
+  padding: 80px 0;
+}
+
+.campaign-hero .campaign-hero-content > div {
+  max-width: 620px;
+}
+
+/* Episode tag */
+
+.campaign-hero .campaign-hero-episode-tag {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin-bottom: 24px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  background: rgb(0 0 0 / 55%);
+}
+
+/* Campaign logo */
+
+.campaign-hero .campaign-hero-logo {
+  margin-bottom: 24px;
+}
+
+.campaign-hero .campaign-hero-logo img {
+  display: block;
+  width: auto;
+  max-width: min(100%, 420px);
+  max-height: 180px;
+}
+
+/* Metadata */
+
+.campaign-hero .campaign-hero-metadata {
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+/* Description */
+
+.campaign-hero .campaign-hero-description {
+  margin-bottom: 32px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.campaign-hero .campaign-hero-description p {
+  margin: 0;
+}
+
+/* CTA */
+
+.campaign-hero .campaign-hero-cta a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.campaign-hero .campaign-hero-cta a:hover {
+  transform: translateY(-2px);
+}
+
+/* Tablet */
+
+@media (width < 900px) {
+  .campaign-hero {
+    min-height: 600px;
+  }
+
+  .campaign-hero::after {
+    background:
+      linear-gradient(
+        90deg,
+        rgb(0 0 0 / 75%) 0%,
+        rgb(0 0 0 / 45%) 100%
+      );
+  }
+
+  .campaign-hero .campaign-hero-content {
+    width: min(100% - 40px, 1200px);
+    padding: 64px 0;
+  }
+}
+
+/* Mobile */
+
+@media (width < 600px) {
+  .campaign-hero {
+    align-items: flex-end;
+    min-height: 560px;
+  }
+
+  .campaign-hero::after {
+    background:
+      linear-gradient(
+        0deg,
+        rgb(0 0 0 / 90%) 0%,
+        rgb(0 0 0 / 55%) 55%,
+        rgb(0 0 0 / 15%) 100%
+      );
+  }
+
+  .campaign-hero .campaign-hero-content {
+    width: calc(100% - 32px);
+    padding: 48px 0;
+  }
+
+  .campaign-hero .campaign-hero-logo img {
+    max-width: 280px;
+  }
+
+  .campaign-hero .campaign-hero-metadata {
+    font-size: 14px;
+  }
+
+  .campaign-hero .campaign-hero-description {
+    margin-bottom: 24px;
+    font-size: 16px;
+  }
+}
