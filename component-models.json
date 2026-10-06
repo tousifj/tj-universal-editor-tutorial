@@ -152,7 +152,7 @@
       },
       {
         "component": "text",
-        "name": "campaignTitle",
+        "name": "title",
         "label": "Campaign Title",
         "valueType": "string"
       },
