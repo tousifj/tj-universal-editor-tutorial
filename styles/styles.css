@@ -327,7 +327,7 @@ main .section.highlight {
 /* centered content section */
 main .section.centered-content {
   margin: 0;
-  padding: 64px 0;
+  padding: 0;
 }
 
 main .section.centered-content > .default-content-wrapper {
@@ -351,7 +351,7 @@ main .section.centered-content p {
 
 @media (width >= 900px) {
   main .section.centered-content {
-    padding: 80px 0;
+    padding: 0;
   }
 
   main .section.centered-content > .default-content-wrapper {
