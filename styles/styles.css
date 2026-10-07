@@ -323,3 +323,38 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
+
+/* centered content section */
+main .section.centered-content {
+  margin: 0;
+  padding: 64px 0;
+}
+
+main .section.centered-content > .default-content-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: center;
+}
+
+main .section.centered-content h1,
+main .section.centered-content h2,
+main .section.centered-content h3 {
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+main .section.centered-content p {
+  margin: 0 auto;
+  max-width: 720px;
+}
+
+@media (width >= 900px) {
+  main .section.centered-content {
+    padding: 80px 0;
+  }
+
+  main .section.centered-content > .default-content-wrapper {
+    padding: 0 32px;
+  }
+}
